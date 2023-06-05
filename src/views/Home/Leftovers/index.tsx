@@ -26,9 +26,10 @@ const Leftovers = () => {
     setDoneFetching(false);
 
     const data = await API.getAllData();
-    if (data) {
-      const productsRaw: string[] = data[0].slice(1);
-      const leftoversRaw: string[][] = data.slice(1);
+    console.log(data);
+    if ('values' in data) {
+      const productsRaw: string[] = data.values[0].slice(1);
+      const leftoversRaw: string[][] = data.values.slice(1);
       setProducts(productsRaw);
       setLeftovers(leftoversRaw);
     }
@@ -65,7 +66,7 @@ const Leftovers = () => {
           <View style={styles.viewContainer}>
             {leftovers
               .reverse()
-              .slice(0, 10) // only take the last 10 values
+              // .slice(0, 10) // only take the last 10 values
               .map(leftover => {
                 return (
                   <View style={styles.leftoversView} key={leftover[0]}>

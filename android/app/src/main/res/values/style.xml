@@ -1,0 +1,8 @@
+<resources>
+  <!-- inherit from the material theme -->
+   <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+      <item name="android:textColor">#ffffff</item>
+      <item name="android:windowBackground">@color/background</item>
+    </style>
+</resources>
